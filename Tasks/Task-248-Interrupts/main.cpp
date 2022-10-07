@@ -44,6 +44,9 @@ int main()
 }
 
 
+//Part 5 - It is very likely that the CPU is sleeping as it is only active to switch the LED, then switched off again for 500ms.
+//Part 7 - The button press woke up the board which then using the interupt routine, calls the funcA() function.
+
 
 
 

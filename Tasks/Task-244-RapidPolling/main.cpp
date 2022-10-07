@@ -20,7 +20,7 @@ Timer tmr;
 
 int main()
 {
-    volatile int count = 0;
+    volatile int count = 0; //volatile Stops complier touching the int so it doesn't get optmised out.
 
     // This little C++ trick allows us to use BOTH BusIn and DigitalIn
     DigitalIn& buttonA = buttons[0];    //ButtonA is synonamous with buttons[0]
@@ -45,7 +45,7 @@ int main()
     int btnB_curr;
     
     microseconds tm = tmr.elapsed_time();   //Part of the C++ chrono class
-    
+
     while (true) {
 
         // ************************************
@@ -100,7 +100,8 @@ int main()
         }
 
         // LED
-        if (tm >= 250ms) {
+        //if (tm >= 250ms) {
+        if (tm >= (100ms+(count*9ms))) { //Part 4
             greenLED = !greenLED;
             tmr.reset();
         }

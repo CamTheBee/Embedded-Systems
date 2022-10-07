@@ -22,7 +22,9 @@ int main()
 
     //This is critical - turn off blocking
     serial_port.set_blocking(false);
-    
+    //serial_port.set_blocking(true); //Part 4
+    //Part 5 - The LED will not flash until a character has been recieved.
+
     //Write strings to the terminal
     char msg1[] = "Press a key to toggle the green LED\n\r";
     char msg2[] = "Press 1 to turn ON the buzzer\n\r";
@@ -80,6 +82,9 @@ int main()
     
         //Experiment -  uncommend the following line. Are any characters missed?
         //wait_us(1000000);   //Delay 1 seconds
-
+        /*
+        Part 9 - As the serial interface is buffered, it can still read data when not told to. This data is stored in a buffer
+        until it is ready to be read so it is not lost. This means, although it will take time, no characters inputted will be lost.
+        */
     }
 }
