@@ -25,5 +25,11 @@ int main() {
     // Use printf to display as a complex number (hint: you need two placeholders)
     
     while (true) {
+
+        ComplexNumber_C y;
+        y.real = p.real + q.real;
+        y.imag = p.imag + q.imag;
+
+        printf("\nY equals %f, %f j\n", y.real, y.imag);
     }
 }

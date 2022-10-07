@@ -11,16 +11,23 @@
 
 #define TRAF_WHITE_PIN PF_10
 
+//Task 3 - The default state of the LED is on. This is because the pin has been set low so the pnp transistor is on, turning on the LED.
+
 //BusInOut Traffic_Lights_2(PC_7,PC_8,PC_9);
 DigitalInOut grnLED(TRAF_GRN2_PIN, PinDirection::PIN_OUTPUT, PinMode::OpenDrainNoPull, 0);
+
+//Task 4:
+DigitalInOut redLED(TRAF_RED2_PIN, PinDirection::PIN_OUTPUT, PinMode::OpenDrainNoPull, 1);
 
 int main()
 {
     //Note the logic
     while (true) {
         grnLED = 1;
+        redLED = 0; //Task 4
         wait_us(1000000);
         grnLED = 0;
+        redLED = 1; //Task 4
         wait_us(1000000);
     }
 }
