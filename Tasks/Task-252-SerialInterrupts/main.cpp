@@ -26,6 +26,86 @@ void onTick()
     led2 = !led2;
 }
 
+void blueFlashUp() {
+
+    char x;
+    if (serial_port.read(&x, 1)) {
+
+        //Check the character input
+        switch (x) {
+            case 13:
+            //User pressed return
+                serial_port.write("\n\r",2); //Echo a newline
+                break;
+
+            case 'P':
+                serial_port.write(&x,1);
+                T += 100000;
+                ledTicker.detach();
+                ledTicker.attach(&onTick, microseconds(T));
+                break;
+            
+            default:
+                //Echo typed character to the terminal
+                serial_port.write(&x,1);
+                break;    
+        };
+    }
+}
+
+void blueFlashDown() {
+
+    char y;
+    int downCounter = 0;
+    if (serial_port.read(&y, 1)) {
+
+        //Check the character input
+        switch (y) {
+            case 13:
+            //User pressed return
+                serial_port.write("\n\r",2); //Echo a newline
+                downCounter = 0;
+                break;
+            
+            case 'O':
+                downCounter++;
+                serial_port.write(&y,1);
+                break;
+            
+            case 'W':
+                if (downCounter == 1){
+                    downCounter++;
+                    serial_port.write(&y,1);
+                }
+                else {
+                    downCounter = 0;
+                    serial_port.write(&y,1);
+                }
+                break;
+
+            case 'N':
+                if (downCounter == 2) {
+                    downCounter = 0;
+                    serial_port.write(&y,1);
+                    T += 100000;
+                    ledTicker.detach();
+                    ledTicker.attach(&onTick, microseconds(T));
+                }
+                else {
+                    downCounter = 0;
+                    serial_port.write(&y,1);
+                }
+                break;
+            
+            default:
+                //Echo typed character to the terminal
+                serial_port.write(&y,1);
+                downCounter = 0;
+                break;    
+        };
+    }
+}
+
 void on_rx_interrupt()
 {
     CriticalSectionLock lock;
@@ -48,6 +128,7 @@ void on_rx_interrupt()
             //Switch off buzzer
             buzz.rest();
             break;
+
         case '+':
             T += 100000;
             ledTicker.detach();
@@ -59,17 +140,34 @@ void on_rx_interrupt()
                 ledTicker.detach();
                 ledTicker.attach(&onTick, microseconds(T));
             }
+            break;  
+  
+/*
+//Challenge Task//
+        case 'U':
+            serial_port.write(&p,1);
+            blueFlashUp();
+            break;
+
+        case 'D':            
+            serial_port.write(&p,1);
+            blueFlashDown();
             break;            
+
         default:
             //Echo typed character to the terminal
             serial_port.write(&p,1);
             break;
+        */
         };
     }
 
     // Toggle the LED.
     led1 = !led1; 
 }
+
+
+
 
 LCD_16X2_DISPLAY disp;
 
