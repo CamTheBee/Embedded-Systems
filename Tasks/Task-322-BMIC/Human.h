@@ -21,7 +21,7 @@ typedef struct {
 
 //Public API void displayHuman(const Human* h);
 extern "C" void displayHuman(const Human* h);
-extern "C" Human initHuman(unsigned a, float wt, float ht);
+extern "C" Human initHuman(unsigned a, float wt, float ht); //Allows a user to define a human. It returns the age, height and weight as well as calculating the bmi.
 extern "C" unsigned updateAge(Human* h, unsigned aa);
 extern "C" float updateHeight(Human* h, float hh);
 extern "C" float updateWeight(Human* h, float ww);

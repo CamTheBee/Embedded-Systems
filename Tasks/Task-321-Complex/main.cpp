@@ -22,6 +22,17 @@ int main()
     }
     //test is now out of scope and should be destroyed
 
+    //Challenge
+    c1.negate();
+    c1.display();
     while (true);
 }
 
+/*
+Part 6 - When copy-constructor is commented out, the results are the same.
+
+Part 7 - c is the temperory function and this is the pointer which points to the address of the variable wanted to be added (c1).
+
+Part 10 - The destructor was prompted by ther exiting of the test.display(); leaving scope. 
+
+*/
