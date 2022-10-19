@@ -58,7 +58,7 @@ public:
     
     //Conjugated - adjective, so return new copy
     ComplexNumber conjugated() {
-        return ComplexNumber(this->real, -1.0*this->imag);
+        return ComplexNumber(this->real, this->imag*-1.0);
     }
 
     //Add in place
@@ -72,9 +72,45 @@ public:
         return ComplexNumber(this->real+c.real, this->imag+c.imag);
     }
     
+    //Subtract in place
+    void subtract(const ComplexNumber& c) {
+        this->real -= c.real;
+        this->imag -= c.imag;
+    }
+
+    //Subtract
+    ComplexNumber subtractedTo(const ComplexNumber& c) {
+        return ComplexNumber(this->real-c.real, this->imag-c.imag);
+    }
+
+    //Multiply
+    void multiply(const int& c){
+        this->real *= c, this->imag *= c;
+    }
+
+    //Multiply With Complex Number
+    ComplexNumber multiplyWith(const ComplexNumber& c) {
+        return ComplexNumber(this->real*c.real, this->imag*c.imag);
+    }
+
+    //Divide
+    void divide(const int& c){
+        this->real /= c, this->imag /= c;
+    }
+
+    //Divide With Complex Number
+    ComplexNumber divideWith(const ComplexNumber& c) {
+        return ComplexNumber(this->real/c.real, this->imag/c.imag);
+    }
+
     //Negate
-    ComplexNumber negate() {
-        return ComplexNumber(-1.0*this->real, -1.0*this->imag);
+    void negate() {
+        this->real *=-1.0, this->imag *=-1.0;
+    }
+
+    //Negated
+    ComplexNumber negated() {
+        return ComplexNumber(this->real * -1.0, this->imag * -1.0);
     }
 
     //Display
