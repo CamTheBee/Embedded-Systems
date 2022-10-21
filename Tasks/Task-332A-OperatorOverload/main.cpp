@@ -86,6 +86,11 @@ public:
     {
         // Return a true if u is equal to `this`
         // ** TO BE DONE BY THE STUDENT **
+        DoubleNumber result;
+        result = *this;
+        if (result == u.getValue()) {
+            return true;
+        }
         return false;
     }
 
@@ -109,10 +114,10 @@ int main()
     n1 += 1.0;      // Equivalent to n1.operator+=(1.0);
     n2 = "-3.0";
     n3 = n2;
-
+    bool a = n3==n0;
     DoubleNumber sum = (n0 + n1 + n2 + n3);
     cout << sum << endl;
-
+    cout << a << endl;
     while (true) {
 
     }
