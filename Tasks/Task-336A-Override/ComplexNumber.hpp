@@ -64,7 +64,8 @@ public:
         ComplexNumber result;
 
         //TO BE DONE
-
+        result = *this;
+        result = result._real += u._real, result._imag += u._imag;
         return result;
     }
 };

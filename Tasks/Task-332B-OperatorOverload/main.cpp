@@ -94,7 +94,7 @@ int main()
         wait_us(5000000);              //5 seconds
 
         if (blueButton == 1) {
-            flashGreen = 50ms;
+            flashGreen = 50ms; //Right clicking ms takes you to the chrono file.
         } else {
             flashGreen = 500ms;
         }

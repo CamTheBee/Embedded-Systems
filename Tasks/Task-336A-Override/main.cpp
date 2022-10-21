@@ -22,14 +22,17 @@ int main()
     cout << c1.asString() << endl;
 
     //Challenge - try and understand this ;)
-    cout << c1.asDoubleNumber().asString() << endl;
+    cout << c1.asDoubleNumber().asString() << endl; //It takes the complex number, converts it to a DoubleNumber (only takes the imag part) and then converts it to a string to be printed out.
 
     //TODO - write an overloaded + operator
-    DoubleNumber sum1 = c0 + c1 + d0 + d1;
+    DoubleNumber sum1 = c0 + c1 + d0 + d1; //Now adds the real parts of the complexNumber to the DoubleNumbers.
     cout << sum1 << endl;
 
+    ComplexNumber sum2 = c0 + c1;
+    cout << sum2.realPart() << sum2.imagPart() << endl;
     while (true) {
 
     }
 }
 
+//Part 2 - Parent Class = DoubleNumber; Child Class = ComplexNumber.

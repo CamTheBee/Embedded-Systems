@@ -116,7 +116,7 @@ class Flickery : public Flashy {
 
 DigitalIn blueButton(USER_BUTTON);
 
-//#define EXP1
+#define EXP1
 int main()
 {
     #ifndef EXP1
@@ -150,4 +150,4 @@ int main()
 }
 
 
-
+//virtual makes it so that no pre-linking occurs to the ISR while compile. This means a v-table can be used while the code is running to match the correct service routine to the one needed.

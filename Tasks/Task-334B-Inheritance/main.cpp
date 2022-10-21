@@ -35,7 +35,7 @@ class Flashy : DigitalOut {
         enable(false);
     }
     //OVERLOAD constructor
-    Flashy(PinName pin) : Flashy(pin, 500ms) {
+    Flashy(PinName pin) : Flashy(pin, 250ms) { //Changed from 500ms due to Part 5. Flash speed set in the constructor for the Flashy class.
     }
     ~Flashy() {
         enable(false);
@@ -104,3 +104,5 @@ int main()
     }
 }
 
+//The class Flashy inherits from the DigitalOut class.
+//The Flashy class does use composition as it is an contains objects inside objects.This is the class as it has microseconds from chrono, etc.
