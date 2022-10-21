@@ -92,3 +92,4 @@ int main()
     }
 }
 
+//Part 5  - These objects have to be created before the constructor can run.
