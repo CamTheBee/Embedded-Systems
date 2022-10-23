@@ -179,3 +179,13 @@ int main()
 
     return 0;
 }
+
+/*
+Part 2 - The copy constructor is used over the move constructor as the move constructor is only used
+for rvalues (&&) and an rvalue is not called.
+
+Part 3 - The copy operator = is used as again, no rvalue is called.
+
+Part 4 - The move operator is used to return the sum value as it is more efficient and a rvalue is
+called. This allows Y to equal A + B without copying twice. 
+*/

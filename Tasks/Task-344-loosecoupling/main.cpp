@@ -41,6 +41,15 @@ int main()
     }
 }
 
+/*
+Part 6 - Both MbedLight and MockedLight have virtual void functions to turn on and off
+the 'led'. However, the the private terms for both classes calls different things. The
+MbedLight class calls the DigitalOut pin for the LED whereas the MockLight creates a 
+boolean state which gets set to minic turning on and off the 'LED'.
 
+Part 7 - The error that occurs is "Variable type 'MbedLight' is an abstract class". This
+is because it must override all of the APIs in order to compile.
 
+Part 8 - Not sure about this; will ask James.
+*/
 

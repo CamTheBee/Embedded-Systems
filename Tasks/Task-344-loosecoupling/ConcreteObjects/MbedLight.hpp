@@ -15,9 +15,10 @@ class MbedLight : public ILightNotify {
         _gpio.write(value);
     }
 
-    virtual void lightOn() { 
+   /* virtual void lightOn() { 
         _gpio.write(1); 
     };
+    */
     virtual void lightOff() { 
         _gpio.write(0); 
     };

@@ -28,6 +28,9 @@ int main()
     }
 }
 
-
+/*
+Part 2 - Buffer is created in the class.
+Part 3 - The buffer data is deleted using the Delete command.
+*/
 
 

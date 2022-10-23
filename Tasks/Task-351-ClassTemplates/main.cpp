@@ -10,6 +10,8 @@ AnalogIn pot(AN_POT_PIN);
 
 //Defines an object with a fixed-size internal buffer
 RunningMean<uint16_t, double, 4> buf4;
+//Part 4
+RunningMean<uint16_t, double, 64> buf64;
 
 int main()
 {
@@ -22,13 +24,18 @@ int main()
  
         //Add sample to buffer.
         buf4 += uPot;
+        buf64 += uPot;
 
         //Output running mean
-        cout << "Mean: " << buf4 << endl;
+        cout << "Mean for buf4: " << buf4 << endl;
+        cout << "Mean for buf64: " << buf64 << endl;
         wait_us(500000);
     }
 }
 
 
-
+/*
+Using a constructor resists what can be entered into main and put into the class. It means
+the class can only be called when those parameters are stated.
+*/
 

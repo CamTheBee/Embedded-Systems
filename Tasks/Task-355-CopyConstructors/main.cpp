@@ -91,7 +91,7 @@ int main()
 {
     cout << "Copy Constructors" << endl;
 
-    Record<int, 4> A;
+    Record<int, 4> A; //Public record{} constructor called.
     Record<int, 4> B;
     A << 1;
     A << 2;
@@ -100,7 +100,7 @@ int main()
     A.display();
 
     // Use copy constructor to deep-copy A into C
-    Record<int, 4> C(A);
+    Record<int, 4> C(A); //Record( const Record& other) : Record() called as it has an argument (calls record after).
 
     // Update A (independently of C)
     A << 5;
@@ -127,3 +127,21 @@ int main()
 
     return 0;
 }
+/*
+Part 2:
+Record constructor is always called as it defines and allacates the memory.
+For A = B, operator overload occurs to make A equal B using the Record& operator+(const record& rhs).
+A is referenced into the overload operator= but as a const. This means it cannot be edited during the
+function. This means a change to A cannot occur and would not effect B.
+
+Part 3:
+For Y = A + B, the result of A + B is temporatry so it is saved into a new argument sum which is then
+returned from the A + B operator overload. This sum is then copied into Y using the overload = function.
+This is unefficient as the data is copied twice. To make this more efficient, the summed data from A + B
+should be put straight into Y (move seminatics).
+
+Part 4:
+Combining Record<int,4> Y = A+B does make it anymore efficient as the combiner can find a way to make
+the code more efficient (avoiding the extra copy). This is known as a Return Value Optimisation (RVO)
+or a move as spoken about above.
+*/
