@@ -49,6 +49,7 @@ void thread1()
         
         if (success) {
             printf("value: %u\n", (uint32_t)rx);
+            Watchdog::get_instance().kick();
         } else {
             printf("Receive timeout\n");
             yellowLED = 1;
@@ -66,6 +67,8 @@ void thread1()
 int main() {
     post();
 
+    Watchdog &watchdog = Watchdog::get_instance();
+    watchdog.start(11000);
     //Start message
     printf("Welcome\n");
            
@@ -82,3 +85,10 @@ int main() {
         greenLED = !greenLED;
     }
 }
+
+/*
+Part 3 - The buffer just resumes.
+Part 4 - A timeout is recieved and the print assumes.
+Part 5 - Nothing happens other than data stops being read.
+Part 6 - Red LED comes on as the buffer is full.
+*/
