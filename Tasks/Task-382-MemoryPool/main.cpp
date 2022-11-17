@@ -46,7 +46,9 @@ void switchISR() {
     //Grab switch state
     uint32_t switch1State = buttonA;
     uint32_t switch2State = buttonB;
-    
+
+    if (buttonA == 1) return; //Busy-wait blocks when button A is pressed.
+
     //Allocate a block from the memory pool (non blocking)
     message_t* message = mpool.try_alloc();
     if (message == NULL) {
@@ -80,6 +82,12 @@ void thread1()
         //Block on the queue
         bool ok = queue.try_get_for(10s, &payload);
         
+        //Grab switch state
+        uint32_t switch1State = buttonA;
+        uint32_t switch2State = buttonB;
+
+        if (buttonB == 1) return; //Busy-wait blocks when button A is pressed.
+
         //Check status
         if (ok) {
             //Make a copy
@@ -122,3 +130,10 @@ int main() {
         puts("Main Thread Alive");
     }
 }
+
+/*
+Part 2 - Holding down button A pauses the code.
+Part 3 - The buffer stops getting red and a warning light comes on.
+Part 4 - 4-bytes.
+Part 5 - This code is safe due to the buffer and the threads waiting while the buffer is empty/full.
+*/
