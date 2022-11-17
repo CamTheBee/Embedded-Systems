@@ -1,14 +1,13 @@
-#ifndef __PUSHSWITCH_HPP__
-#define __PUSHSWITCH_HPP__
+#ifndef __tickerInterrupt_HPP__
+#define __tickerInterrupt_HPP__
 #include "mbed.h"
 
-class PushSwitch {
+class adcInterrupt {
 
 private:
-    typedef enum {RISING_EVENT=1, FALLING_EVENT=2} SWITCH_EVENT;
-    InterruptIn switchInterrupt;
-    osThreadId_t threadID;
 
+    InterruptIn adcInterrupt;
+    
     void switchPressed() {
         switchInterrupt.rise(NULL);
         osSignalSet(threadID, RISING_EVENT);

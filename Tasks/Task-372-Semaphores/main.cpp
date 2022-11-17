@@ -6,10 +6,10 @@
 #include <cstdio>
 using namespace uop_msb;
  
-Semaphore sem1;
-Semaphore sem2(10);
+Semaphore sem1(5); //How many down increments occur for  init value.
+Semaphore sem2(5); //How many up increments occur from init value.
 Mutex countLock;
-uint16_t counter = 0;
+uint16_t counter = 5;
 Thread t1;
 Thread t2;
 
@@ -73,3 +73,8 @@ int main(void)
     }
     
 }   
+
+/*
+Part 6 - You cannot get pass 0 or 10 because the semaphore locks outs to waiting
+before this can occur.
+*/

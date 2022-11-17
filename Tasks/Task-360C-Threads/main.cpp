@@ -16,7 +16,7 @@ int main() {
     t1.start(task1);
     t2.start(task2);
     
-    //t1.set_priority(osPriorityRealtime);  //Try this
+    t2.set_priority(osPriorityRealtime);  //Try this
 
     //Wait for t1 and t2 to end (which they never do)
     t1.join();
@@ -55,3 +55,12 @@ void task2() {
         ThisThread::sleep_for(50ms);    //Blocks in the WAITING state
     }    
 }
+
+
+/*
+Part 5 - When t1 has priority, the LED cycle does not work properly. The red LED stil works but when the A button is also pressed, the Yellow led comes on, does not flash.
+The A button does nothing unless pressed at the same time as button B. This is because t1 takes all the CPU power and has a busy wait loop so it is sat doing nothing for most 
+of the time.
+
+Part 6 - When t2 has priority, there is no busy wait loop to sit in so it all still works fine.
+*/

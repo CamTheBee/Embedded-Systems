@@ -17,6 +17,7 @@ DigitalOut backLight(LCD_BKL_PIN,0);
 DigitalIn button(USER_BUTTON);
 AnalogIn pot(AN_POT_PIN);
 LCD_16X2_DISPLAY disp;
+Mutex counterLock; //Part 5 - Making the counters safe.
 
 //Additional Threads
 Thread t1;
@@ -31,6 +32,7 @@ void countUp()
     //RED MEANS THE COUNT UP FUNCTION IS IN ITS CRITICAL SECTION
     green_led = 1;
     for (unsigned int n=0; n<N; n++) {
+        counterLock.lock();
         counter++; 
         counter++;
         counter++;
@@ -40,7 +42,8 @@ void countUp()
         counter++;
         counter++;
         counter++;
-        counter++;           
+        counter++;
+        counterLock.unlock();           
     }  
     green_led = 0; 
     
@@ -52,16 +55,18 @@ void countDown()
     //YELLOW MEANS THE COUNT DOWN FUNCTION IS IN ITS CRITICAL SECTION
     yellow_led = 1;
     for (unsigned int n=0; n<N; n++) {
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;           
+        counterLock.lock();
+        counter++; 
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counter++;
+        counterLock.unlock();        
     }
     yellow_led = 0;
     
@@ -93,11 +98,13 @@ int main() {
     //Did the counter end up at zero?
     backLight = 1;
     disp.locate(1, 0);
+    counterLock.lock(); //Pedantic, but setting an example :)
     disp.printf("Counter=%Ld\n", counter);
 
     if (counter == 0) {
         red_led = 0;   
     }
+    counterLock.unlock(); 
         
     //Now wait forever
     while (true) {
@@ -106,3 +113,6 @@ int main() {
     
 }
 
+/*
+Part 4 - Changing the skew changes the result as the interrupt waits less time to interrupt.
+*/

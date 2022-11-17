@@ -1,5 +1,6 @@
 #include "mbed.h"
 #include "uop_msb.h"
+#include <cstdio>
 using namespace uop_msb;
 
 void countUp();
@@ -34,18 +35,25 @@ void countUp()
     //RED MEANS THE COUNT UP FUNCTION IS IN ITS CRITICAL SECTION
     green_led = 1;
     for (unsigned int n=0; n<N; n++) {
-        counterLock.lock();
-        counter++; 
-        counter++;
-        counter++;
-        counter++;
-        counter++;
-        counter++;
-        counter++;
-        counter++;
-        counter++;
-        counter++; 
-        counterLock.unlock();          
+        if (counterLock.trylock_for(5s) == true)
+        {
+            counter++; 
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++; 
+            counterLock.unlock();
+        }
+        else {
+            while (true) {
+                printf("Error, no lock available!\n");
+            }
+        }          
     }  
     green_led = 0; 
     
@@ -57,18 +65,25 @@ void countDown()
     //YELLOW MEANS THE COUNT DOWN FUNCTION IS IN ITS CRITICAL SECTION
     yellow_led = 1;
     for (unsigned int n=0; n<N; n++) {
-        counterLock.lock();
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;
-        counter--;   
-        counterLock.unlock();        
+        if (counterLock.trylock_for(5s) == true)
+        {
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;
+            counter--;   
+            counterLock.unlock();
+        }
+        else {
+            while (true) {
+                printf("Error, no lock available!\n");
+            }
+        }       
     }
     yellow_led = 0;
     
@@ -95,24 +110,38 @@ int main() {
         t2.start(countDown);
 
         //INDUCE A DEADLOCK
-        counterLock.lock(); // Add one extra lock (oops)
-        t1.join();  //Wait for t1 to complete
-        t2.join();  //Wait for t2 to complete
-        counterLock.unlock(); //Release again
+        if (counterLock.trylock_for(5s) == true)
+        { // Add one extra lock (oops)
+            t1.join();  //Wait for t1 to complete
+            t2.join();  //Wait for t2 to complete
+            counterLock.unlock(); //Release again
+        }
+        else {
+            while (true) {
+                printf("Error, no lock available!\n");
+            }
+        } 
     }
     
     //Did the counter end up at zero?
     backLight = 1;
     disp.locate(1, 0);
 
-    counterLock.lock(); //Pedantic, but setting an example :)
-    disp.printf("Counter=%Ld\n", counter);
+    if (counterLock.trylock_for(5s) == true)
+    { //Pedantic, but setting an example :)
+        disp.printf("Counter=%Ld\n", counter);
 
-    if (counter == 0) {
-        red_led = 0;   
+        if (counter == 0) {
+            red_led = 0;   
+        }
+        counterLock.unlock();   
     }
-    counterLock.unlock();   
-
+    else {
+        while (true) {
+            printf("Error, no lock available!\n");
+        }
+    
+    } 
     //Now wait forever
     while (true) {
         ThisThread::sleep_for(Kernel::wait_for_u32_forever);

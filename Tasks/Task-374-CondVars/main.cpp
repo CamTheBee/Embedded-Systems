@@ -61,7 +61,7 @@ int main()
         printf("Main: Set count to %u\r\n", counter);
 
         //Notify waiting threads that some change has occured
-        cond.notify_all();
+        cond.notify_one();
 
         //Release the lock (and exit the critical section)
         mutex.unlock();
@@ -75,7 +75,7 @@ int main()
     // Change done and notify
     done = true;
     printf("Main: Set done\r\n");
-    cond.notify_all();
+    cond.notify_one();
     mutex.unlock();
 
     //Wait for the thread to exit
@@ -89,3 +89,9 @@ int main()
         ThisThread::sleep_for(500ms);
     }
 }
+/*
+Part 3 - When cond.notify_all(); is used, all threads are able to use the lock,
+allowing both threads to use the counter in the same cycle. However, when 
+cond.notify_one();, only one thread is told the lock is free, only allowed one
+to use counter and run in a cycle.
+*/
