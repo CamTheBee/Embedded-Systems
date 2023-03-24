@@ -17,11 +17,6 @@ ComplexNumber Xk(0.0,0.0);
 ComplexNumber xntemp(0.0,0.0);
 ComplexNumber zero(0.0,0.0);
 
-// MATRIX DISPLAY SPI WITH OUTPUT ENABLE
-SPI spi(PC_12, PC_11, PC_10);   // MOSI, MISO, SCLK
-DigitalOut cs(PB_6);            //Chip Select ACTIVE LOW
-DigitalOut oe(PB_12);           //Output Enable ACTIVE LOW
-
 //List of variables used for DFT.
 double powerResult = 0;
 double mag = 0;
@@ -43,60 +38,6 @@ double xInp[200]={
 
 int main()
 {
-
-    
-    while(true)
-    {
-        for (int j=0;j<=7;j++)  //NB ROW has 3 to 8 decoder so 0 to 7 to Row Select
-                                //COLUMNS(COL) are 0 to 255 to select each Byte
-        {
-            for (int i=1;i<255;i*=2) //Increment LEFT Hand Block of 8
-            {
-                cs=0;           //Send Data to Matrix
-                spi.write(0x00);//COL RHS
-                spi.write(i);   //COL LHS
-                spi.write(j);   //ROW RHS
-                cs=1;           //low to high will effectivelly LATCH the Shift register to output
-                wait_us(500000);
-            }
-            for (int i=1;i<255;i*=2) //Increment RIGHT Hand Block of 8
-            {
-                cs=0;           //Send Data to Matrix
-                spi.write(i);   //COL RHS
-                spi.write(0x00);//COL LHS
-                spi.write(j);   //ROW RHS
-                cs=1;           //low to high will effectivelly LATCH the Shift register to output
-                wait_us(500000);
-            }
-        }
-    for (int j=0;j<=7;j++)  //NB ROW has 3 to 8 decoder so 0 to 7 to Row Select
-                                //COLUMNS(COL) are 0 to 255 to select each Byte
-        {
-            {
-                cs=0;           //Send Data to Matrix
-                spi.write(0xFF);//COL RHS
-                spi.write(0xFF);   //COL LHS
-                spi.write(j);   //ROW RHS
-                cs=1;           //low to high will effectivelly LATCH the Shift register to output
-                wait_us(500000);
-            }
-        }
-     for (int j=7;j>=0;j--)  //NB ROW has 3 to 8 decoder so 0 to 7 to Row Select
-                                //COLUMNS(COL) are 0 to 255 to select each Byte
-        {
-            {
-                cs=0;           //Send Data to Matrix
-                spi.write(0xFF);//COL RHS
-                spi.write(0xFF);   //COL LHS
-                spi.write(j);   //ROW RHS
-                cs=1;           //low to high will effectivelly LATCH the Shift register to output
-                wait_us(500000);
-            }
-        }
-
-    }
-    
-    /*
     //k (freq bin value)
     volatile int k = 4;
     
@@ -131,17 +72,17 @@ int main()
         //Uncomment either version 1 or version 2
         ////////////////////////////////////////////////////////////////////
         //Version 1:
-        
+        /*
         //Absolute of real and imag components
         realComp = abs(Xk.getReal());
         imagComp = abs(Xk.getImag());
 
         //Squares the real and imag component and adds them to powerResult
         powerResult = (realComp*realComp) + (imagComp*imagComp);
-        
+        */
         ////////////////////////////////////////////////////////////////////
         //Version 2
-        
+        /*
         //Gets real and imag components
         realComp = Xk.getReal();
         imagComp = Xk.getImag();
@@ -152,7 +93,7 @@ int main()
 
         //Squares the mag and saves it to powerResult
         powerResult = mag*mag;        
-           
+        */      
         ////////////////////////////////////////////////////////////////////
 
 
@@ -186,8 +127,10 @@ int main()
     for (int i = 0; i<29; i++) {
         printf("Power: %f | Freq: %f\n", resultArray[0][i], resultArray[1][i]);
     }
-    */
+
     //While true to not break main once the DFT has finished
+    while (true){
+    }
     }
 
 

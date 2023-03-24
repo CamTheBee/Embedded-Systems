@@ -1,22 +1,25 @@
 #include "mbed.h"
-#include "uop_msb.h"
-#include "PushSwitch.hpp"
-#include "FlashingLED.hpp"
+#include <cstdio>
+//#include "uop_msb.h"
+//#include "PushSwitch.hpp"
+//#include "FlashingLED.hpp"
+//#include <cstdio>
 
-using namespace uop_msb;
+//using namespace uop_msb;
 
 void task1();
 void task2();
-
+signed int countUp = 0;
+signed int countDown = 0;
 Thread t1, t2;
 
 int main() {
-
-    FlashingLED yellow(TRAF_YEL1_PIN);
+    printf("Start\n");
+    //FlashingLED yellow(TRAF_YEL1_PIN);
     t1.start(task1);
     t2.start(task2);
     
-    t2.set_priority(osPriorityRealtime);  //Try this
+    //t2.set_priority(osPriorityRealtime);  //Try this
 
     //Wait for t1 and t2 to end (which they never do)
     t1.join();
@@ -25,6 +28,16 @@ int main() {
 
 // Version 1 - Partially uses a spinning technique
 void task1() {
+    while (true){
+    countUp++;
+    printf("Added 1!\n");
+    if (countUp==10) {
+        printf("Counted to 10!\n");
+        countUp = 0;
+    }
+    ThisThread::sleep_for(1000ms);
+    }
+    /*
     DigitalOut red_led(TRAF_RED1_PIN);  
     DigitalIn sw1(BTN1_PIN);
     red_led = sw1;
@@ -35,11 +48,22 @@ void task1() {
         while (sw1 == 1) {};            //BLOCKS via SPINNING
         red_led = !red_led;             
         ThisThread::sleep_for(50ms);    //Blocks in the WAITING state
-    }    
+    } 
+    */   
 }
 
 // Version 2 - uses a much more power-friendly ISR driven method
 void task2() {
+    while (true) {
+    countDown--;
+    if (countDown==-100) {
+        printf("Counted to -100!\n");
+        countDown = 0;
+    }
+    
+    ThisThread::sleep_for(50ms);
+    }
+    /*
     DigitalOut green_led(TRAF_GRN1_PIN);
     PushSwitch button2(BTN2_PIN);
 
@@ -53,7 +77,8 @@ void task2() {
         button2.waitForRelease();       //Blocks in the WAITING state
         green_led = !green_led;         
         ThisThread::sleep_for(50ms);    //Blocks in the WAITING state
-    }    
+    }  
+*/    
 }
 
 
