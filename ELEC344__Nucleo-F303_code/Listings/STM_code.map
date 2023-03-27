@@ -20,12 +20,12 @@ Section Cross References
     main.o(.text.main) refers to adc.o(.text.ADC_Init) for ADC_Init
     main.o(.text.main) refers to leds.o(.text.init_led) for init_led
     main.o(.text.main) refers to pwm.o(.text.init_pwm) for init_pwm
-    main.o(.text.main) refers to adc.o(.text.read_adc) for read_adc
     main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.4
     main.o(.text.main) refers to pwm.o(.text.output_pwm) for output_pwm
     main.o(.text.main) refers to usart.o(.text.print_terminal) for print_terminal
-    main.o(.text.main) refers to systick_delay.o(.text.delay_nms) for delay_nms
     main.o(.text.main) refers to noretval__2sprintf.o(.text) for __2sprintf
+    main.o(.text.main) refers to adc.o(.text.read_adc) for read_adc
+    main.o(.text.main) refers to systick_delay.o(.text.delay_nms) for delay_nms
     main.o(.ARM.exidx.text.main) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.ARM.exidx.text.main) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.ARM.exidx.text.main) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
@@ -398,15 +398,15 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800076c   Section        0  pwm.o(.text.init_pwm)
     [Anonymous Symbol]                       0x080007ec   Section        0  usart.o(.text.init_usart)
     [Anonymous Symbol]                       0x0800087c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08000a8c   Section        0  pwm.o(.text.output_pwm)
-    [Anonymous Symbol]                       0x08000ae8   Section        0  usart.o(.text.print_terminal)
-    [Anonymous Symbol]                       0x08000b20   Section        0  adc.o(.text.read_adc)
-    $v0                                      0x08000b4a   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x08000b4a   Section       26  fpinit.o(x$fpl$fpinit)
-    .L.str.7                                 0x08000b74   Data          27  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08000b74   Section        0  main.o(.rodata.str1.1)
-    .L.str.4                                 0x08000b8f   Data          31  main.o(.rodata.str1.1)
-    .L.str.5                                 0x08000bae   Data          28  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08000b08   Section        0  pwm.o(.text.output_pwm)
+    [Anonymous Symbol]                       0x08000b64   Section        0  usart.o(.text.print_terminal)
+    [Anonymous Symbol]                       0x08000b9c   Section        0  adc.o(.text.read_adc)
+    $v0                                      0x08000bc6   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08000bc6   Section       26  fpinit.o(x$fpl$fpinit)
+    .L.str.7                                 0x08000bf0   Data          27  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08000bf0   Section        0  main.o(.rodata.str1.1)
+    .L.str.4                                 0x08000c0b   Data          32  main.o(.rodata.str1.1)
+    .L.str.5                                 0x08000c2b   Data          28  main.o(.rodata.str1.1)
     .bss                                     0x20000008   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000070   Data         512  startup_stm32f303x8.o(HEAP)
     HEAP                                     0x20000070   Section      512  startup_stm32f303x8.o(HEAP)
@@ -589,16 +589,16 @@ Image Symbol Table
     init_led                                 0x08000741   Thumb Code    42  leds.o(.text.init_led)
     init_pwm                                 0x0800076d   Thumb Code   128  pwm.o(.text.init_pwm)
     init_usart                               0x080007ed   Thumb Code   128  usart.o(.text.init_usart)
-    main                                     0x0800087d   Thumb Code   400  main.o(.text.main)
-    output_pwm                               0x08000a8d   Thumb Code    92  pwm.o(.text.output_pwm)
-    print_terminal                           0x08000ae9   Thumb Code    54  usart.o(.text.print_terminal)
-    read_adc                                 0x08000b21   Thumb Code    42  adc.o(.text.read_adc)
-    _fp_init                                 0x08000b4b   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08000b63   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08000b63   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    AHBPrescTable                            0x08000b64   Data          16  system_stm32f3xx.o(.rodata.AHBPrescTable)
-    Region$$Table$$Base                      0x08000bcc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000bec   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x0800087d   Thumb Code   504  main.o(.text.main)
+    output_pwm                               0x08000b09   Thumb Code    92  pwm.o(.text.output_pwm)
+    print_terminal                           0x08000b65   Thumb Code    54  usart.o(.text.print_terminal)
+    read_adc                                 0x08000b9d   Thumb Code    42  adc.o(.text.read_adc)
+    _fp_init                                 0x08000bc7   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000bdf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000bdf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x08000be0   Data          16  system_stm32f3xx.o(.rodata.AHBPrescTable)
+    Region$$Table$$Base                      0x08000c48   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000c68   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f3xx.o(.data.SystemCoreClock)
     __libspace_start                         0x20000008   Data          96  libspace.o(.bss)
     PWM_MAX                                  0x20000068   Data           2  pwm.o(.bss.PWM_MAX)
@@ -613,9 +613,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000231
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000bf0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000c6c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000bec, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000c68, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -700,32 +700,32 @@ Memory Map of the image
     0x0800076a   0x0800076a   0x00000002   PAD
     0x0800076c   0x0800076c   0x00000080   Code   RO           70    .text.init_pwm      pwm.o
     0x080007ec   0x080007ec   0x00000090   Code   RO           41    .text.init_usart    usart.o
-    0x0800087c   0x0800087c   0x00000210   Code   RO           22    .text.main          main.o
-    0x08000a8c   0x08000a8c   0x0000005c   Code   RO           72    .text.output_pwm    pwm.o
-    0x08000ae8   0x08000ae8   0x00000036   Code   RO           43    .text.print_terminal  usart.o
-    0x08000b1e   0x08000b1e   0x00000002   PAD
-    0x08000b20   0x08000b20   0x0000002a   Code   RO            4    .text.read_adc      adc.o
-    0x08000b4a   0x08000b4a   0x0000001a   Code   RO          240    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000b64   0x08000b64   0x00000010   Data   RO           97    .rodata.AHBPrescTable  system_stm32f3xx.o
-    0x08000b74   0x08000b74   0x00000056   Data   RO           24    .rodata.str1.1      main.o
-    0x08000bca   0x08000bca   0x00000002   PAD
-    0x08000bcc   0x08000bcc   0x00000020   Data   RO          315    Region$$Table       anon$$obj.o
+    0x0800087c   0x0800087c   0x0000028c   Code   RO           22    .text.main          main.o
+    0x08000b08   0x08000b08   0x0000005c   Code   RO           72    .text.output_pwm    pwm.o
+    0x08000b64   0x08000b64   0x00000036   Code   RO           43    .text.print_terminal  usart.o
+    0x08000b9a   0x08000b9a   0x00000002   PAD
+    0x08000b9c   0x08000b9c   0x0000002a   Code   RO            4    .text.read_adc      adc.o
+    0x08000bc6   0x08000bc6   0x0000001a   Code   RO          240    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08000be0   0x08000be0   0x00000010   Data   RO           97    .rodata.AHBPrescTable  system_stm32f3xx.o
+    0x08000bf0   0x08000bf0   0x00000057   Data   RO           24    .rodata.str1.1      main.o
+    0x08000c47   0x08000c47   0x00000001   PAD
+    0x08000c48   0x08000c48   0x00000020   Data   RO          315    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000bec, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000c68, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000bec   0x00000004   Data   RW           96    .data.SystemCoreClock  system_stm32f3xx.o
+    0x20000000   0x08000c68   0x00000004   Data   RW           96    .data.SystemCoreClock  system_stm32f3xx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000008, Load base: 0x08000bf0, Size: 0x00000668, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000008, Load base: 0x08000c6c, Size: 0x00000668, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000008        -       0x00000060   Zero   RW          180    .bss                c_w.l(libspace.o)
     0x20000068        -       0x00000002   Zero   RW           74    .bss.PWM_MAX        pwm.o
-    0x2000006a   0x08000bf0   0x00000002   PAD
+    0x2000006a   0x08000c6c   0x00000002   PAD
     0x2000006c        -       0x00000004   Zero   RW           61    .bss.ms_counter     systick_delay.o
     0x20000070        -       0x00000200   Zero   RW           83    HEAP                startup_stm32f303x8.o
     0x20000270        -       0x00000400   Zero   RW           82    STACK               startup_stm32f303x8.o
@@ -740,7 +740,7 @@ Image component sizes
 
        130          0          0          0          0       2267   adc.o
         42          0          0          0          0       1235   leds.o
-       528        128         86          0          0       1787   main.o
+       652        148         87          0          0       1979   main.o
        100          0          0          0          0       1206   pll config stmf3.o
        220          8          0          0          2       2147   pwm.o
         64         26        392          0       1536        928   startup_stm32f303x8.o
@@ -749,9 +749,9 @@ Image component sizes
        198         16          0          0          0       2387   usart.o
 
     ----------------------------------------------------------------------
-      1642        178        528          4       1544      18046   Object Totals
+      1766        198        528          4       1544      18238   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         6          0          2          0          2          0   (incl. Padding)
+         6          0          1          0          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -810,15 +810,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2524        222        528          4       1640      18674   Grand Totals
-      2524        222        528          4       1640      18674   ELF Image Totals
-      2524        222        528          4          0          0   ROM Totals
+      2648        242        528          4       1640      18866   Grand Totals
+      2648        242        528          4       1640      18866   ELF Image Totals
+      2648        242        528          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3052 (   2.98kB)
+    Total RO  Size (Code + RO Data)                 3176 (   3.10kB)
     Total RW  Size (RW Data + ZI Data)              1644 (   1.61kB)
-    Total ROM Size (Code + RO Data + RW Data)       3056 (   2.98kB)
+    Total ROM Size (Code + RO Data + RW Data)       3180 (   3.11kB)
 
 ==============================================================================
 

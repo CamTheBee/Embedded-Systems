@@ -2,7 +2,7 @@
 #include "systick_delay.h"
 #include "PWR.h"
 
-#define ms_count	(SystemCoreClock/1000)
+#define ms_count	(SystemCoreClock/1000000)
 unsigned int ms_counter=0;
 void SysTick_Init(void) 
 {

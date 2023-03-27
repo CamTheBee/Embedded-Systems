@@ -51,17 +51,22 @@ int main(void)
 	
 	ADC_Init();
 	init_led();
-	init_pwm(10000);
-	
+	init_pwm(500000);
+	int counter = 0;
+	int totalCounter = 1000;
 	
 	
 	unsigned short n=0;
 	////////////////////////////////
-	int32_t prevVoltage = convert_PA0;
+	//int32_t prevVoltage = convert_PA0;
+	volatile int32_t prevVoltage = 0;
 	volatile int32_t voltage = 0;
+	volatile int32_t tempVoltage = 0;
 	volatile int32_t changedVoltage = 0;
-	int32_t prevCurrent = convert_PA1;
+	//int32_t prevCurrent = convert_PA1;
+	volatile int32_t prevCurrent = 0;
 	volatile int32_t current = 0;
+	volatile int32_t tempCurrent = 0;
 	volatile int32_t changedCurrent = 0;
 	
 	volatile float changedcal = 0.0f;
@@ -73,12 +78,25 @@ int main(void)
 	
 	while(1)
 	{
-		delay_nms(100);
+		//delay_nms(100);
 		led_on();
-		//--------------------------------------------
-		//MPPT ALGORITHM BEGIN
-		voltage = convert_PA0;
-		current = convert_PA1;
+		
+		while (counter<totalCounter) {
+			tempVoltage = convert_PA0 + tempVoltage;
+			tempCurrent = convert_PA1 + tempCurrent;
+			counter++;
+			delay_nms(2);
+		}
+		
+		voltage = tempVoltage/totalCounter;
+		current = tempCurrent/totalCounter;
+		
+		counter = 0;
+		tempVoltage = 0;
+		tempCurrent = 0;
+		
+		led_off();
+		
 		
 		sprintf(term_msg,"Voltage	Value: %d\n\r", voltage);
 		print_terminal(term_msg);
@@ -124,7 +142,7 @@ int main(void)
 				if (changedcal > -(actualcal)) { //Might need changing
 					if (n != 100) {
 						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.1!\n\r");
+						print_terminal("Duty Cycle increased by 0.01!\n\r");
 					}
 					else {
 						print_terminal("Duty Cycle is at maximum!\n\r");
@@ -133,7 +151,7 @@ int main(void)
 				else {
 					if (n != 0) {
 						output_pwm((float)(n--)); //Might need changing
-						print_terminal("Duty Cycle decreased by 0.1!\n\r");
+						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
 					print_terminal("Duty Cycle is at minimum!\n");
@@ -157,7 +175,7 @@ int main(void)
 				if (changedCurrent > 0) {
 					if (n != 100) {
 						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.1!\n\r");
+						print_terminal("Duty Cycle increased by 0.01!\n\r");
 					}
 					else {
 						print_terminal("Duty Cycle is at maximum!\n");
@@ -166,26 +184,18 @@ int main(void)
 				else {
 					if (n != 0) {
 						output_pwm((float)(n--)); //Might need changing
-						print_terminal("Duty Cycle decreased by 0.1!\n\r");
+						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
 						print_terminal("Duty Cycle is at minimum!\n");
 					};
 				}
 			break;
-			
-				/*
-			default:
-					stage = 1;
-			break;
-				*/
 		}
 		//WRITE YOUR CODE HERE
-		
-		delay_nms(10);
-		//output_pwm((float)(n++));
-		//if(n==100)n=0;
-		
+		//delay_nms(10);
+		sprintf(term_msg,"Duty Cycle: %d\n\n\r", n);
+		print_terminal(term_msg);
 		
 		
 		//Saving previous terms
@@ -195,7 +205,7 @@ int main(void)
 		
 		//--------------------------------------------
 		//MPPT ALGORITHM END
-		led_off();
+		
 	
 	
 	}//end while
