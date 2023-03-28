@@ -51,7 +51,7 @@ int main(void)
 	
 	ADC_Init();
 	init_led();
-	init_pwm(500000);
+	init_pwm(100000);
 	int counter = 0;
 	int totalCounter = 1000;
 	
@@ -78,14 +78,14 @@ int main(void)
 	
 	while(1)
 	{
-		//delay_nms(100);
+		delay_nms(1000000);
 		led_on();
 		
 		while (counter<totalCounter) {
 			tempVoltage = convert_PA0 + tempVoltage;
 			tempCurrent = convert_PA1 + tempCurrent;
 			counter++;
-			delay_nms(2);
+			delay_nms(5);
 		}
 		
 		voltage = tempVoltage/totalCounter;
@@ -141,20 +141,20 @@ int main(void)
 			case 3:
 				if (changedcal > -(actualcal)) { //Might need changing
 					if (n != 100) {
-						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.01!\n\r");
-					}
-					else {
-						print_terminal("Duty Cycle is at maximum!\n\r");
-					}
-				}
-				else {
-					if (n != 0) {
 						output_pwm((float)(n--)); //Might need changing
 						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
-					print_terminal("Duty Cycle is at minimum!\n");
+						print_terminal("Duty Cycle is at minimum!\n\r");
+					}
+				}
+				else {
+					if (n != 0) {
+						output_pwm((float)(n++)); //Might need changing
+						print_terminal("Duty Cycle increased by 0.01!\n\r");
+					}
+					else {
+					print_terminal("Duty Cycle is at maximum!\n");
 					}
 				}
 				stage = 1;
@@ -174,20 +174,20 @@ int main(void)
 			case 5:
 				if (changedCurrent > 0) {
 					if (n != 100) {
-						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.01!\n\r");
-					}
-					else {
-						print_terminal("Duty Cycle is at maximum!\n");
-					}
-				}
-				else {
-					if (n != 0) {
 						output_pwm((float)(n--)); //Might need changing
 						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
 						print_terminal("Duty Cycle is at minimum!\n");
+					}
+				}
+				else {
+					if (n != 0) {
+						output_pwm((float)(n++)); //Might need changing
+						print_terminal("Duty Cycle increased by 0.01!\n\r");
+					}
+					else {
+						print_terminal("Duty Cycle is at maximum!\n");
 					};
 				}
 			break;
