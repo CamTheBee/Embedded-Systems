@@ -560,12 +560,11 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --depen
 d=.\objects\startup_stm32f303x8.d -o.\objects\startup_stm32f303x8.o -I.\RTE\_Ta
-rget_1 -IC:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Incl
-ude -IC:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\C
-MSIS\Device\ST\STM32F3xx\Include --predefine="__UVISION_VERSION SETA 537" --pre
-define="_RTE_ SETA 1" --predefine="STM32F303x8 SETA 1" --predefine="_RTE_ SETA 
-1" --list=.\listings\startup_stm32f303x8.lst RTE/Device/STM32F303K8Tx/startup_s
-tm32f303x8.s
+rget_1 -IC:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Keil_v5\AR
+M\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include --pre
+define="__UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predefine="STM
+32F303x8 SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_stm32f303
+x8.lst RTE/Device/STM32F303K8Tx/startup_stm32f303x8.s
 
 
 

@@ -56,7 +56,8 @@ int main(void)
 	int totalCounter = 1000;
 	
 	
-	unsigned short n=0;
+	unsigned short n=50;
+	output_pwm((float)(n));
 	////////////////////////////////
 	//int32_t prevVoltage = convert_PA0;
 	volatile int32_t prevVoltage = 0;
@@ -78,7 +79,7 @@ int main(void)
 	
 	while(1)
 	{
-		delay_nms(1000000);
+		delay_nms(100000);
 		led_on();
 		
 		while (counter<totalCounter) {
@@ -124,6 +125,7 @@ int main(void)
 					stage = 2;
 					changedcal = (float)changedCurrent/(float)changedVoltage;
 					actualcal = (float)current/(float)voltage;
+					
 				}
 
 				
@@ -140,8 +142,8 @@ int main(void)
 			//Checking if changecal>-actualcal
 			case 3:
 				if (changedcal > -(actualcal)) { //Might need changing
-					if (n != 100) {
-						output_pwm((float)(n--)); //Might need changing
+					if (n != 75) {
+						output_pwm((float)(n++)); //Might need changing
 						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
@@ -149,8 +151,8 @@ int main(void)
 					}
 				}
 				else {
-					if (n != 0) {
-						output_pwm((float)(n++)); //Might need changing
+					if (n != 25) {
+						output_pwm((float)(n--)); //Might need changing
 						print_terminal("Duty Cycle increased by 0.01!\n\r");
 					}
 					else {
@@ -173,8 +175,8 @@ int main(void)
 			//Checking if delta current is greater than 0.
 			case 5:
 				if (changedCurrent > 0) {
-					if (n != 100) {
-						output_pwm((float)(n--)); //Might need changing
+					if (n != 75) {
+						output_pwm((float)(n++)); //Might need changing
 						print_terminal("Duty Cycle decreased by 0.01!\n\r");
 					}
 					else {
@@ -182,8 +184,8 @@ int main(void)
 					}
 				}
 				else {
-					if (n != 0) {
-						output_pwm((float)(n++)); //Might need changing
+					if (n != 25) {
+						output_pwm((float)(n--)); //Might need changing
 						print_terminal("Duty Cycle increased by 0.01!\n\r");
 					}
 					else {
