@@ -1,8 +1,8 @@
 {
-    "requires": ["bare-metal"],
     "target_overrides": {
-        "*": {
-            "target.printf_lib": "std"
+        "NUCLEO_F429ZI": {
+            "target.printf_lib": "std",
+            "target.components_add": ["SD"]
         }
     }
 }

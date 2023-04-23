@@ -12,7 +12,7 @@ void SysTick_Init(void)
 }
 
 
-void delay_nms(unsigned int n)     //delay of n milliseconds
+void delay_us(unsigned int n)     //delay of microseconds
 {
 	unsigned int ms_start=ms_counter;
 	while((unsigned int)(ms_counter-ms_start)<n)

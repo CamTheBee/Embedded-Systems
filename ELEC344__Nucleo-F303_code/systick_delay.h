@@ -3,7 +3,7 @@
 
 
 void SysTick_Init(void);
-void delay_nus(unsigned int n);
+void delay_us(unsigned int n);
 void delay_nms(unsigned int n);
 
 #endif

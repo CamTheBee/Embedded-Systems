@@ -20,10 +20,14 @@ Section Cross References
     main.o(.text.main) refers to adc.o(.text.ADC_Init) for ADC_Init
     main.o(.text.main) refers to leds.o(.text.init_led) for init_led
     main.o(.text.main) refers to pwm.o(.text.init_pwm) for init_pwm
+<<<<<<< Updated upstream
+=======
+    main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.6
+>>>>>>> Stashed changes
     main.o(.text.main) refers to pwm.o(.text.output_pwm) for output_pwm
     main.o(.text.main) refers to usart.o(.text.print_terminal) for print_terminal
     main.o(.text.main) refers to noretval__2sprintf.o(.text) for __2sprintf
-    main.o(.text.main) refers to systick_delay.o(.text.delay_nms) for delay_nms
+    main.o(.text.main) refers to systick_delay.o(.text.delay_us) for delay_us
     main.o(.text.main) refers to adc.o(.text.read_adc) for read_adc
     main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.5
     main.o(.ARM.exidx.text.main) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
@@ -43,8 +47,8 @@ Section Cross References
     usart.o(.ARM.exidx.text.send_usart) refers to usart.o(.text.send_usart) for [Anonymous Symbol]
     systick_delay.o(.text.SysTick_Init) refers to system_stm32f3xx.o(.data.SystemCoreClock) for SystemCoreClock
     systick_delay.o(.ARM.exidx.text.SysTick_Init) refers to systick_delay.o(.text.SysTick_Init) for [Anonymous Symbol]
-    systick_delay.o(.text.delay_nms) refers to systick_delay.o(.bss.ms_counter) for ms_counter
-    systick_delay.o(.ARM.exidx.text.delay_nms) refers to systick_delay.o(.text.delay_nms) for [Anonymous Symbol]
+    systick_delay.o(.text.delay_us) refers to systick_delay.o(.bss.ms_counter) for ms_counter
+    systick_delay.o(.ARM.exidx.text.delay_us) refers to systick_delay.o(.text.delay_us) for [Anonymous Symbol]
     systick_delay.o(.text.SysTick_Handler) refers to systick_delay.o(.bss.ms_counter) for ms_counter
     systick_delay.o(.ARM.exidx.text.SysTick_Handler) refers to systick_delay.o(.text.SysTick_Handler) for [Anonymous Symbol]
     pwm.o(.text.init_pwm) refers to system_stm32f3xx.o(.data.SystemCoreClock) for SystemCoreClock
@@ -220,7 +224,7 @@ Removing Unused input sections from the image.
     Removing usart.o(.ARM.exidx.text.send_usart), (8 bytes).
     Removing systick_delay.o(.text), (0 bytes).
     Removing systick_delay.o(.ARM.exidx.text.SysTick_Init), (8 bytes).
-    Removing systick_delay.o(.ARM.exidx.text.delay_nms), (8 bytes).
+    Removing systick_delay.o(.ARM.exidx.text.delay_us), (8 bytes).
     Removing systick_delay.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
     Removing pwm.o(.text), (0 bytes).
     Removing pwm.o(.ARM.exidx.text.init_pwm), (8 bytes).
@@ -393,20 +397,20 @@ Image Symbol Table
     [Anonymous Symbol]                       0x080005ec   Section        0  systick_delay.o(.text.SysTick_Init)
     [Anonymous Symbol]                       0x08000634   Section        0  system_stm32f3xx.o(.text.SystemCoreClockUpdate)
     [Anonymous Symbol]                       0x0800069c   Section        0  system_stm32f3xx.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x0800070c   Section        0  systick_delay.o(.text.delay_nms)
+    [Anonymous Symbol]                       0x0800070c   Section        0  systick_delay.o(.text.delay_us)
     [Anonymous Symbol]                       0x08000740   Section        0  leds.o(.text.init_led)
     [Anonymous Symbol]                       0x0800076c   Section        0  pwm.o(.text.init_pwm)
     [Anonymous Symbol]                       0x080007ec   Section        0  usart.o(.text.init_usart)
     [Anonymous Symbol]                       0x0800087c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08000b08   Section        0  pwm.o(.text.output_pwm)
-    [Anonymous Symbol]                       0x08000b64   Section        0  usart.o(.text.print_terminal)
-    [Anonymous Symbol]                       0x08000b9c   Section        0  adc.o(.text.read_adc)
-    $v0                                      0x08000bc6   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x08000bc6   Section       26  fpinit.o(x$fpl$fpinit)
-    .L.str.7                                 0x08000bf0   Data          27  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08000bf0   Section        0  main.o(.rodata.str1.1)
-    .L.str.4                                 0x08000c0b   Data          32  main.o(.rodata.str1.1)
-    .L.str.5                                 0x08000c2b   Data          28  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08000b04   Section        0  pwm.o(.text.output_pwm)
+    [Anonymous Symbol]                       0x08000b60   Section        0  usart.o(.text.print_terminal)
+    [Anonymous Symbol]                       0x08000b98   Section        0  adc.o(.text.read_adc)
+    $v0                                      0x08000bc2   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08000bc2   Section       26  fpinit.o(x$fpl$fpinit)
+    .L.str.6                                 0x08000bec   Data          32  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08000bec   Section        0  main.o(.rodata.str1.1)
+    .L.str.4                                 0x08000c0c   Data          32  main.o(.rodata.str1.1)
+    .L.str.5                                 0x08000c2c   Data          28  main.o(.rodata.str1.1)
     .bss                                     0x20000008   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000070   Data         512  startup_stm32f303x8.o(HEAP)
     HEAP                                     0x20000070   Section      512  startup_stm32f303x8.o(HEAP)
@@ -585,10 +589,11 @@ Image Symbol Table
     SysTick_Init                             0x080005ed   Thumb Code    72  systick_delay.o(.text.SysTick_Init)
     SystemCoreClockUpdate                    0x08000635   Thumb Code   104  system_stm32f3xx.o(.text.SystemCoreClockUpdate)
     SystemInit                               0x0800069d   Thumb Code   112  system_stm32f3xx.o(.text.SystemInit)
-    delay_nms                                0x0800070d   Thumb Code    50  systick_delay.o(.text.delay_nms)
+    delay_us                                 0x0800070d   Thumb Code    50  systick_delay.o(.text.delay_us)
     init_led                                 0x08000741   Thumb Code    42  leds.o(.text.init_led)
     init_pwm                                 0x0800076d   Thumb Code   128  pwm.o(.text.init_pwm)
     init_usart                               0x080007ed   Thumb Code   128  usart.o(.text.init_usart)
+<<<<<<< Updated upstream
     main                                     0x0800087d   Thumb Code   500  main.o(.text.main)
     output_pwm                               0x08000b09   Thumb Code    92  pwm.o(.text.output_pwm)
     print_terminal                           0x08000b65   Thumb Code    54  usart.o(.text.print_terminal)
@@ -597,6 +602,16 @@ Image Symbol Table
     __fplib_config_fpu_vfp                   0x08000bdf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
     __fplib_config_pureend_doubles           0x08000bdf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
     AHBPrescTable                            0x08000be0   Data          16  system_stm32f3xx.o(.rodata.AHBPrescTable)
+=======
+    main                                     0x0800087d   Thumb Code   504  main.o(.text.main)
+    output_pwm                               0x08000b05   Thumb Code    92  pwm.o(.text.output_pwm)
+    print_terminal                           0x08000b61   Thumb Code    54  usart.o(.text.print_terminal)
+    read_adc                                 0x08000b99   Thumb Code    42  adc.o(.text.read_adc)
+    _fp_init                                 0x08000bc3   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000bdb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000bdb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x08000bdc   Data          16  system_stm32f3xx.o(.rodata.AHBPrescTable)
+>>>>>>> Stashed changes
     Region$$Table$$Base                      0x08000c48   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x08000c68   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f3xx.o(.data.SystemCoreClock)
@@ -694,21 +709,20 @@ Memory Map of the image
     0x080005ec   0x080005ec   0x00000048   Code   RO           55    .text.SysTick_Init  systick_delay.o
     0x08000634   0x08000634   0x00000068   Code   RO           94    .text.SystemCoreClockUpdate  system_stm32f3xx.o
     0x0800069c   0x0800069c   0x00000070   Code   RO           92    .text.SystemInit    system_stm32f3xx.o
-    0x0800070c   0x0800070c   0x00000032   Code   RO           57    .text.delay_nms     systick_delay.o
+    0x0800070c   0x0800070c   0x00000032   Code   RO           57    .text.delay_us      systick_delay.o
     0x0800073e   0x0800073e   0x00000002   PAD
     0x08000740   0x08000740   0x0000002a   Code   RO           14    .text.init_led      leds.o
     0x0800076a   0x0800076a   0x00000002   PAD
     0x0800076c   0x0800076c   0x00000080   Code   RO           70    .text.init_pwm      pwm.o
     0x080007ec   0x080007ec   0x00000090   Code   RO           41    .text.init_usart    usart.o
-    0x0800087c   0x0800087c   0x0000028c   Code   RO           22    .text.main          main.o
-    0x08000b08   0x08000b08   0x0000005c   Code   RO           72    .text.output_pwm    pwm.o
-    0x08000b64   0x08000b64   0x00000036   Code   RO           43    .text.print_terminal  usart.o
-    0x08000b9a   0x08000b9a   0x00000002   PAD
-    0x08000b9c   0x08000b9c   0x0000002a   Code   RO            4    .text.read_adc      adc.o
-    0x08000bc6   0x08000bc6   0x0000001a   Code   RO          240    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000be0   0x08000be0   0x00000010   Data   RO           97    .rodata.AHBPrescTable  system_stm32f3xx.o
-    0x08000bf0   0x08000bf0   0x00000057   Data   RO           24    .rodata.str1.1      main.o
-    0x08000c47   0x08000c47   0x00000001   PAD
+    0x0800087c   0x0800087c   0x00000288   Code   RO           22    .text.main          main.o
+    0x08000b04   0x08000b04   0x0000005c   Code   RO           72    .text.output_pwm    pwm.o
+    0x08000b60   0x08000b60   0x00000036   Code   RO           43    .text.print_terminal  usart.o
+    0x08000b96   0x08000b96   0x00000002   PAD
+    0x08000b98   0x08000b98   0x0000002a   Code   RO            4    .text.read_adc      adc.o
+    0x08000bc2   0x08000bc2   0x0000001a   Code   RO          240    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08000bdc   0x08000bdc   0x00000010   Data   RO           97    .rodata.AHBPrescTable  system_stm32f3xx.o
+    0x08000bec   0x08000bec   0x0000005c   Data   RO           24    .rodata.str1.1      main.o
     0x08000c48   0x08000c48   0x00000020   Data   RO          315    Region$$Table       anon$$obj.o
 
 
@@ -738,6 +752,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
+<<<<<<< Updated upstream
        130          0          0          0          0       2247   adc.o
         42          0          0          0          0       1215   leds.o
        652        152         87          0          0       1977   main.o
@@ -750,8 +765,22 @@ Image component sizes
 
     ----------------------------------------------------------------------
       1766        202        528          4       1544      18054   Object Totals
+=======
+       130          0          0          0          0       2267   adc.o
+        42          0          0          0          0       1235   leds.o
+       648        144         92          0          0       1991   main.o
+       100          0          0          0          0       1206   pll config stmf3.o
+       220          8          0          0          2       2147   pwm.o
+        64         26        392          0       1536        928   startup_stm32f303x8.o
+       216          0         16          4          0       2392   system_stm32f3xx.o
+       138          0          0          0          4       3668   systick_delay.o
+       198         16          0          0          0       2387   usart.o
+
+    ----------------------------------------------------------------------
+      1762        194        532          4       1544      18221   Object Totals
+>>>>>>> Stashed changes
          0          0         32          0          0          0   (incl. Generated)
-         6          0          1          0          2          0   (incl. Padding)
+         6          0          0          0          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -810,9 +839,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
+<<<<<<< Updated upstream
       2648        246        528          4       1640      18682   Grand Totals
       2648        246        528          4       1640      18682   ELF Image Totals
       2648        246        528          4          0          0   ROM Totals
+=======
+      2644        238        532          4       1640      18849   Grand Totals
+      2644        238        532          4       1640      18849   ELF Image Totals
+      2644        238        532          4          0          0   ROM Totals
+>>>>>>> Stashed changes
 
 ==============================================================================
 

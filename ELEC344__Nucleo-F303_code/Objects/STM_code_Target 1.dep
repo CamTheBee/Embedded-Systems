@@ -17,6 +17,7 @@ I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3x
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
+<<<<<<< Updated upstream
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626FAD4E)
@@ -25,6 +26,16 @@ F (.\main.c)(0x64241D68)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FAD4E)
+=======
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x60FBEE48)
+F (.\main.c)(0x644503B1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o ./objects/main.o -MD)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FBB5E)
+>>>>>>> Stashed changes
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FAD4E)
@@ -34,6 +45,7 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x6252D156)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6252D156)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6252D156)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6252D156)
+<<<<<<< Updated upstream
 I (adc.h)(0x6423FCC2)
 I (leds.h)(0x6423FCC2)
 I (usart.h)(0x6423FCC2)
@@ -44,6 +56,18 @@ F (.\PLL Config STMF3.c)(0x6423FCC2)(-xc -std=c99 --target=arm-arm-none-eabi -mc
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FAD4E)
+=======
+I (adc.h)(0x64148802)
+I (leds.h)(0x64148802)
+I (usart.h)(0x64148802)
+I (systick_delay.h)(0x6444F792)
+I (PLL_Config.h)(0x64148802)
+I (pwm.h)(0x64148802)
+F (.\PLL Config STMF3.c)(0x64148802)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o "./objects/pll config stmf3.o" -MD)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FBB5E)
+>>>>>>> Stashed changes
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FAD4E)
@@ -64,6 +88,7 @@ I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3x
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6252D156)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6252D156)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6252D156)
+<<<<<<< Updated upstream
 F (.\systick_delay.c)(0x6423FCC2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Keil_v5/ARM/Pack/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/ARM/Pack/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o ./objects/systick_delay.o -MD)
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBE038)
@@ -98,6 +123,42 @@ F (RTE/Device/STM32F303K8Tx/system_stm32f3xx.c)(0x6423FCC2)(-xc -std=c99 --targe
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBE038)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FAD4E)
+=======
+F (.\systick_delay.c)(0x6444F796)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o ./objects/systick_delay.o -MD)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FBB5E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x60FBEE48)
+I (systick_delay.h)(0x6444F792)
+I (PWR.h)(0x64148802)
+F (.\pwm.c)(0x64148802)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o ./objects/pwm.o -MD)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FBB5E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626FBB5E)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x60FBEE48)
+I (pwm.h)(0x64148802)
+F (.\PWR.h)(0x64148802)()
+F (.\PLL_Config.h)(0x64148802)()
+F (.\pwm.h)(0x64148802)()
+F (.\adc.h)(0x64148802)()
+F (.\leds.h)(0x64148802)()
+F (.\main.h)(0x64148802)()
+F (.\systick_delay.h)(0x6444F792)()
+F (.\usart.h)(0x64148802)()
+F (RTE/Device/STM32F303K8Tx/startup_stm32f303x8.s)(0x64148803)(--cpu Cortex-M4.fp.sp -g-I.\RTE\_Target_1-IC:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include--pd "__UVISION_VERSION SETA 537"--pd "_RTE_ SETA 1"--pd "STM32F303x8 SETA 1"--pd "_RTE_ SETA 1"--list .\listings\startup_stm32f303x8.lst--xref -o .\objects\startup_stm32f303x8.o--depend .\objects\startup_stm32f303x8.d)
+F (RTE/Device/STM32F303K8Tx/system_stm32f3xx.c)(0x64148803)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F303x8 -D_RTE_-o ./objects/system_stm32f3xx.o -MD)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x60FBEE48)
+I (C:\Users\camer\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626FBB5E)
+>>>>>>> Stashed changes
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252D158)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626FAD4E)
 I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626FAD4E)
