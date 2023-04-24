@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.37.0.0
 Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Peter Bye Plymouth University Flex license: MDK Professional 5.37 (Flex): 100 user(s) (mdk_pro) Operation stops: 6 Jul 2024
+License Information: Cameron Stephens University of Plymouth Flex license: MDK Professional 5.37 (Flex): 100 user(s) (mdk_pro) Operation stops: 6 Jul 2024
  
 Tool Versions:
 Toolchain:       MDK Professional 5.37 (Flex): 100 user(s)  Version: 5.37.0.0
@@ -21,16 +21,23 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-C:\Users\csstephens\Documents\GitHub\Embedded-Systems\ELEC344__Nucleo-F303_code\STM_code.uvprojx
-Project File Date:  03/29/2023
+C:\GitHub\Embedded-Systems\ELEC344__Nucleo-F303_code\STM_code.uvprojx
+Project File Date:  04/23/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
+assembling startup_stm32f303x8.s...
 compiling systick_delay.c...
+compiling usart.c...
+compiling PLL Config STMF3.c...
+compiling leds.c...
 compiling main.c...
+compiling pwm.c...
+compiling adc.c...
+compiling system_stm32f3xx.c...
 linking...
-Program Size: Code=2644 RO-data=532 RW-data=4 ZI-data=1640  
+Program Size: Code=2648 RO-data=532 RW-data=4 ZI-data=1640  
 ".\Objects\STM_code.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -49,8 +56,8 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Target_1
-  C:/Keil_v5/ARM/Pack/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Keil_v5/ARM/Pack/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include
+  C:/Users/camer/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/camer/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
@@ -58,17 +65,10 @@ Package Vendor: Keil
 
    * Component: Keil.Standalone::Device:Startup:1.11.3
       Include file:  Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h
-      Source file:   Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/arm/startup_stm32f303x8.s
       Source file:   MDK/Device/Source/ARM/STM32F3xx_OPT.s
-<<<<<<< Updated upstream
       Source file:   Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/arm/startup_stm32f303x8.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h
-      Source file:   Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.c
-Build Time Elapsed:  00:00:02
-=======
       Source file:   Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.c
 Build Time Elapsed:  00:00:06
->>>>>>> Stashed changes
 </pre>
 </body>
 </html>

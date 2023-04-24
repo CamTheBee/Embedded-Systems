@@ -61,16 +61,12 @@ int main(void)
 	int sampleCounter = 0;
 	int total = 1000;
 	
+	//Duty Cycle value initalised at 50
+	unsigned short dutyCycle=50; 
+	output_pwm((float)(dutyCycle)); 
 	
-<<<<<<< Updated upstream
-	unsigned short n=50;
-	output_pwm((float)(n));
-	////////////////////////////////
-=======
-	unsigned short dutyCycle=0; //Duty Cycle value x100
 	
 	//Variables for voltages
->>>>>>> Stashed changes
 	//int32_t prevVoltage = convert_PA0;
 	volatile int32_t prevVoltage = 0;
 	volatile int32_t voltage = 0;
@@ -99,13 +95,7 @@ int main(void)
 	//Start of forever while loop//
 	while(1)
 	{
-<<<<<<< Updated upstream
-		delay_nms(100000);
-		led_on();
-=======
->>>>>>> Stashed changes
-		
-		delay_us(1000000); //Initial 1 second delay to prevent instability
+		delay_us(100000); //Initial 1 second delay to prevent instability
 		led_on(); //Switch the onboard LED on to signal sampling
 		
 		
@@ -157,20 +147,6 @@ int main(void)
 		
 			//Checking delta voltage is equal to zero
 			case 1:
-<<<<<<< Updated upstream
-				if (changedVoltage == 0) {
-					stage = 4;
-				}
-				else {
-					stage = 2;
-					changedcal = (float)changedCurrent/(float)changedVoltage;
-					actualcal = (float)current/(float)voltage;
-					
-				}
-
-=======
->>>>>>> Stashed changes
-				
 				if (deltaVoltage == 0) {
 					stage = 4; //Current check state (Route 2)
 				}
@@ -198,24 +174,7 @@ int main(void)
 					break; //No change to duty cycle required so break from case loop and return to sampling
 					
 				}
-				
-<<<<<<< Updated upstream
-			//Checking if changecal>-actualcal
-			case 3:
-				if (changedcal > -(actualcal)) { //Might need changing
-					if (n != 75) {
-						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle decreased by 0.01!\n\r");
-					}
-					else {
-						print_terminal("Duty Cycle is at minimum!\n\r");
-					}
-				}
-				else {
-					if (n != 25) {
-						output_pwm((float)(n--)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.01!\n\r");
-=======
+			
 				else {
 					stage = 3; //Next check state as change required		
 				}
@@ -236,7 +195,6 @@ int main(void)
 						
 						print_terminal("Duty Cycle increased by 0.01!\n\r"); //Action printed to terminal
 						
->>>>>>> Stashed changes
 					}
 					
 					else {
@@ -297,12 +255,6 @@ int main(void)
 				
 			//Checking if delta current has gotten bigger or smaller than the zero (Which side of P-V curve)
 			case 5:
-<<<<<<< Updated upstream
-				if (changedCurrent > 0) {
-					if (n != 75) {
-						output_pwm((float)(n++)); //Might need changing
-						print_terminal("Duty Cycle decreased by 0.01!\n\r");
-=======
 				
 				if (deltaCurrent > 0) {
 					//If entered so delta current has gotten bigger than zero. On the let side of the curve
@@ -314,7 +266,6 @@ int main(void)
 						
 						print_terminal("Duty Cycle increased by 0.01!\n\r"); //Print action to terminal
 						
->>>>>>> Stashed changes
 					}
 					
 					else {
@@ -339,22 +290,6 @@ int main(void)
 					}
 					
 				}
-<<<<<<< Updated upstream
-				else {
-					if (n != 25) {
-						output_pwm((float)(n--)); //Might need changing
-						print_terminal("Duty Cycle increased by 0.01!\n\r");
-					}
-					else {
-						print_terminal("Duty Cycle is at maximum!\n");
-					};
-				}
-			break;
-		}
-		//WRITE YOUR CODE HERE
-		//delay_nms(10);
-		sprintf(term_msg,"Duty Cycle: %d\n\n\r", n);
-=======
 				
 				stage = 1; //Reset state
 				
@@ -367,7 +302,6 @@ int main(void)
 		
 		//Print current duty cycle to the terminal
 		sprintf(term_msg,"Duty Cycle: %d\n\n\r", dutyCycle);
->>>>>>> Stashed changes
 		print_terminal(term_msg);
 		
 		
