@@ -1,3 +1,4 @@
+/*
 #include "mbed.h" 
 
 // Create a DigitalOut “object” called greenLED. Pass constant LED1 as a “parameter”
@@ -27,5 +28,52 @@ int main()
 
         // Wait 0.2 second
         wait_us(100000); 
+    }
+}
+*/
+/*
+ * Copyright (c) 2018-2020 Arm Limited and affiliates.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Copyright (c) 2017-2020 Arm Limited and affiliates.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Copyright (c) 2018-2020 Arm Limited and affiliates.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Copyright (c) 2017-2020 Arm Limited and affiliates.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "mbed.h"
+
+int main()
+{
+    
+    MbedCRC<POLY_32BIT_ANSI, 32> ct;
+
+    char  test[] = "123456789";
+    uint32_t crc = 0;
+
+    printf("\nPolynomial = 0x%lx  Width = %d \n", ct.get_polynomial(), ct.get_width());
+
+    ct.compute((void *)test, strlen((const char *)test), &crc);
+    printf("The CRC of data \"123456789\" is : 0x%lx\n", crc);
+    
+    return 0;
+    
+    DigitalOut pwmControl(PA_8, 1);
+    DigitalOut iLED(PA_0, 1);
+    AnalogIn acOutput(PC_1);
+    AnalogIn dcOutput(PC_0);
+
+    while (true) {
+        
     }
 }

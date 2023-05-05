@@ -8,9 +8,11 @@
 #include <cmath>
 #include <iterator>
 #include "mbed_events.h"
+#include "SDBlockDevice.h"
+#include "FATFileSystem.h"
 
 using namespace std;
-DigitalOut LED(PB_0);
+
 /*
 EventQueue mainQueue;
 EventQueue dftQueue;
@@ -336,10 +338,12 @@ int main()
     //cout << "Done" << endl;
     }
     */
-    //DigitalOut LED(PB_0);
-    AnalogIn PDAC(PC_1);
-    AnalogIn PDDC(PC_0);
+    DigitalOut PWM(PA_8);
+    DigitalOut ILED(PA_0, 1);
+    //AnalogIn PDAC(PC_1);
+    //AnalogIn PDDC(PC_0);
 
+    /*
     printf("Start!\n");
     LED = 1;
     int n = 0;
@@ -366,6 +370,17 @@ int main()
         printf("AC Value: %i\n\n", ACValue);
         wait_us(1000000);
     }
+    */
+
+    while (true) {
+        PWM = 0;
+        wait_us(500);
+
+        PWM = 1;
+        wait_us(500);
+    } 
+
+
 }
 
 
@@ -374,3 +389,5 @@ int main()
     /*
 
     */
+
+
