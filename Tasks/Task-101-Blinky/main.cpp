@@ -55,7 +55,7 @@ int main()
 
 int main()
 {
-    
+    /*
     MbedCRC<POLY_32BIT_ANSI, 32> ct;
 
     char  test[] = "123456789";
@@ -67,13 +67,18 @@ int main()
     printf("The CRC of data \"123456789\" is : 0x%lx\n", crc);
     
     return 0;
-    
-    DigitalOut pwmControl(PA_8, 1);
+    */
+
+    DigitalOut pwmControl(PC_8, 1);
     DigitalOut iLED(PA_0, 1);
     AnalogIn acOutput(PC_1);
     AnalogIn dcOutput(PC_0);
 
     while (true) {
-        
+        pwmControl = 0;
+        wait_us(100);
+
+        pwmControl = 1;
+        wait_us(100);
     }
 }
